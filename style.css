@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+@import 'animate.css';
+
+*,::before,::after{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Rubik', sans-serif;
+}
+body{
+   overflow-x: hidden;
+}
+.navConatiner{
+    box-shadow: 0px 4px 10px 0px rgba(157, 157, 157, 0.2);
+}
+ul.navLists a{
+    transition: all 200ms cubic-bezier(.4,0,.2,1) ;
+    text-decoration: none;
+    color: #000000;
+}
+ul.navLists a:hover{
+    color: #6674cc;
+    fill: #6674cc;
+}
+
+.typewriter::after{
+    content: "|";
+    color: #363a45;
+    font-size: 100%;
+    margin-left: 1px;
+    animation: blink .80s ease infinite;
+}
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+  
+    100% {
+        opacity: 0;
+    }
+}
+div.stuPics img{
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+}
+.floating-image {
+    filter: drop-shadow(0 8px 10px rgba(0,0,0,.015)) drop-shadow(0 5px 8px rgba(0,0,0,.02));
+    animation: floatAnimation 3s ease-in-out infinite;
+  }
+  @keyframes floatAnimation {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+.spin_animation {
+    animation: spin 55s linear infinite;
+}
+.spin_animation2 {
+    animation: spin 25s linear infinite reverse;
+}
+
+.logoSpin1 {
+    animation: spin 55s linear infinite reverse;
+}
+.logoSpin2 {
+    animation: spin 45s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.boxCont{
+    transition-property:all;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.4,0,.3,1);
+}
+
+img{
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+
+p{
+    display: inline !important;
+}
+
+@media screen and (max-width: 220px) {
+    .container,
+    .boxCont {
+        background-color: red ;
+    }
+}
