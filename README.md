@@ -17,7 +17,8 @@
 <h4 align="left">#codehelp-full-website-clone
 </h4>
 <h4 align="left">👩‍💻 About My Project:</h4>
-<p align="left">- 🔭 In this project, I have done very hardwork with full concentration for aquiring new skills and technologies.<br> With the help Love Babbar, founder of CodeHelp platform, one of the best teacher and in his youtube free lectures I done this as a project. Thankyou and I am happy more when collaborate in this work and help me to improve more.</p>
+<p align="left">- 🔭 In this project, I have done very hard work with full concentration for acquiring new skills and technologies.
+With the help Love Babbar, founder of CodeHelp platform, one of the best teachers and in his YouTube free lectures I done this as a project. Thank you and I am happy more when collaborate in this work and help me to improve more.</p>
 <h6 align="left">🛠 Language and tools used<br><br>- HTML <br>- CSS <br>- Tailwind CSS <br>- JS</h6>
 
 ###
