@@ -8,10 +8,8 @@
     <link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <!-- <div class="blur-container relative flex justify-center ">
-      <img src="./images/codehlp-logo.svg"/> -->
-        <div class="container absolute max-w-full ">
+  <body class="h-screen absolute w-screen overflow-x-hidden">
+    <div class="container absolute h-full w-full ">
             <div class="navConatiner z-[700] fixed w-full">
                 <div class="bg-[#F7F8FC] relative flex items-center justify-center py-4">
                     <nav class="w-[95%] relative flex justify-between">
@@ -51,24 +49,24 @@
                     </nav>
                 </div>
             </div>
-            <div class="margin-top w-screen md:mt-[85px]"></div>
-            <section class="landingPage animate__animated h-screen w-screen flex flex-col-reverse items-center justify-between md:flex-row relative py-12 md:py-0">
-                <div class="heroCont relative h-screen mx-auto flex w-11/12 max-w-7xl flex-col-reverse items-center justify-between md:flex-row">
-                    <div class="flex relative flex-wrap flex-col gap-y-6 w-[400px] md:min-w-[600px] h-auto">
-                       <div class="animate__animated animate__fadeInLeft relative flex w-[400px] md:min-w-[600px] gap-x-2 md:text-6xl text-3xl font-bold">
+            <div class="margin-top w-screen mt-72 md:mt-[85px]"></div>
+            <section class="landingPage animate__animated h-screen w-screen flex flex-col-reverse items-center justify-between md:flex-row py-12 md:py-0">
+                <div class="heroCont relative mx-auto flex w-11/12 max-w-7xl flex-col-reverse items-center justify-between md:flex-row">
+                    <div class="flex relative flex-wrap flex-col gap-y-6 md:w-[400px] lg:min-w-[600px]">
+                       <div class="animate__animated animate__fadeInLeft relative flex w-[400px] md:min-w-[600px] gap-x-2 md:text-4xl xl:text-6xl text-3xl font-bold">
                         <h1 class="text-[#6674cc]">Learn</h1> 
                         <h1 class="text-[#363a45]">With</h1>
                         <h1 class="typewrite text-[#363a45]" data-period="2000" data-type='[ "Love", "Babbar"]'>
                         <span class="typewriter"></span></h1>
                        </div>
-                        <span class="animate__animated animate__fadeInLeft w-[400px] md:min-w-[600px] text-[#4a4f5c] text-3xl md:text-4xl">
+                        <span class="animate__animated animate__fadeInLeft w-[400px] md:min-w-[600px] text-[#4a4f5c] text-xl md:text-2xl xl:text-4xl">
                             The Ultimate Guide To Ace <br> SDE Interviews.
                         </span>
                         <div class="Buttons2 animate__animated animate__fadeInUp w-[400px] md:min-w-[600px] flex items-center gap-x-4">
-                            <button class="focus:ring-offset-2 focus:ring-[#6674cc] focus:ring-2 cursor-pointer text-[#fff] bg-[#6674cc] border border-[#6674cc] rounded-md text-lg py-4 px-9">
+                            <button class="focus:ring-offset-2 focus:ring-[#6674cc] focus:ring-2 cursor-pointer text-[#fff] bg-[#6674cc] border border-[#6674cc] rounded-md xl:text-lg text-sm xl:px-9 xl:py-4 px-5 py-2">
                               View Courses
                             </button>
-                            <button class="focus:ring-offset-2 focus:ring-[#6674cc] focus:ring-2 cursor-pointer bg-[#fff] border border-[#6674cc] rounded-md text-lg py-4 px-9">
+                            <button class="focus:ring-offset-2 focus:ring-[#6674cc] focus:ring-2 cursor-pointer bg-[#fff] border border-[#6674cc] rounded-md xl:text-lg text-sm xl:px-9 xl:py-4 px-5 py-2">
                               Watch Video
                             </button>
                         </div>
@@ -86,12 +84,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="rightBox flex w-full h-full items-center justify-end relative md:max-w-[60%]">
-                        <div class="heroImages md:flex md:visible hidden w-full h-full justify-center items-center">
+                    <div class="rightBox w-full h-full items-center justify-end relative block xl:flex md:max-w-[60%]">
+                        <div class="heroImages relative xl:hidden flex min-h-full min-w-full">
+                            <img loading="lazy" class="gradeient-pic visible select-none absolute blur-[85px] -top-[5rem] left-[0]" src="./images/linear-gradeient-pic.svg">
+                            <img loading="lazy" class="foreground-pic relative object-contain top-[10px]" src="./images/hero-foreground-linear-imagee.webp" />
+                        </div>
+                        <div class="heroImages xl:flex hidden xl:w-full xl:h-full justify-center items-center">
                             <img loading="lazy" class="gradeient-pic select-none absolute blur-[85px] -top-[5rem] left-[0]" src="./images/linear-gradeient-pic.svg">
                             <img loading="lazy" class="foreground-pic relative object-contain top-[10px]" src="./images/hero-foreground-linear-image.svg" />
                         </div>
-                        <div class="floating-image md:flex md:visible hidden bg-cover absolute ">
+                        <div class="floating-image xl:flex hidden bg-contain absolute ">
                             <div><img loading="lazy" class="imgs1 relative -top-[9rem] left-[13rem]" src="./images/hero-foreground-linear-image-item1.png"></div>
                             <div><img loading="lazy" class="imgs2 relative top-[1.6rem] -left-[7.5rem]" src="./images/hero-foreground-linear-image-item2.png"></div>
                             <div><img loading="lazy" class="imgs3 relative top-[2rem] -left-[7.3rem]" src="./images/hero-foreground-linear-image-item3.png"></div>
@@ -463,7 +465,6 @@
                 flex items-center gap-x-3" href="#">🤔 Facing an issue?
             </a>
         </div>
-    <!-- </div> -->
     <script src="script.js"></script>
   </body>
 </html>
