@@ -7,12 +7,6 @@
     box-sizing: border-box;
     font-family:'Rubik', sans-serif;
 }
-div#container {
-    display: none;
-}
-#svg2 {
-    display: none;
-}
 
 ul.navLists a{
     transition: all 200ms cubic-bezier(.4,0,.2,1) ;

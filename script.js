@@ -102,7 +102,6 @@ window.onscroll = () => {
     sections.forEach(sec => {
       let offset = sec.offsetTop - 500;
       let height = sec.offsetHeight;
-  
       if (currentScrollY >= offset && currentScrollY < offset + height) {
         sec.classList.add('animate__animated');
       } else {
@@ -114,14 +113,43 @@ window.onscroll = () => {
 };
 
 //-------------------CodeHelp ToggleDark Mode------------------------------------------
-document.getElementById('svg1').addEventListener('click', function() {
-  // Toggle visibility of the SVGs
-  document.getElementById('svg1').style.display = 'none';
-  document.getElementById('svg2').style.display = 'block';
-});
-// Add a click event listener to the second SVG
-document.getElementById('svg2').addEventListener('click', function() {
-  // Toggle visibility of the SVGs
-  document.getElementById('svg2').style.display = 'none';
-  document.getElementById('svg1').style.display = 'block';
-});
+// document.getElementById('svg1').addEventListener('click', function() {
+//   document.getElementById('svg1').style.display = 'none';
+//   document.getElementById('svg2').style.display = 'block';
+// });
+// // Add a click event listener to the second SVG
+// document.getElementById('svg2').addEventListener('click', function() {
+//   document.getElementById('svg2').style.display = 'none';
+//   document.getElementById('svg1').style.display = 'block';
+// });
+
+//-------------------CodeHelp Support Section------------------------------------------
+
+// Function to increase numbers with varying speeds
+function increaseNumber(targetId, targetValue, speed) {
+  const targetElement = document.getElementById(targetId);
+  let currentValue = 0;
+  const increment = Math.ceil(targetValue / (speed * 1000)); // Calculate the increment based on speed (e.g., 1000ms = 1 second)
+  function updateValue() {
+      if (currentValue < targetValue) {
+          currentValue += increment;
+          targetElement.querySelector("span").textContent = currentValue;
+          setTimeout(updateValue, 1);
+      } else {
+          targetElement.querySelector("span").textContent = targetValue;
+      }
+  }
+  updateValue();
+}
+function checkScrollPosition() {
+  if (window.scrollY > 100) {
+      // Call the function with different values and speeds for each element
+      increaseNumber("num1", 900, .5); // Increase to 900 in 1 second
+      increaseNumber("num2", 4, 20);   // Increase to 4 in 5 seconds
+      increaseNumber("num3", 100, 8); // Increase to 100 in 3 seconds
+      increaseNumber("num4", 410, 2); // Increase to 410 in 2 seconds
+
+      window.removeEventListener("scroll", checkScrollPosition);
+  }
+}
+window.addEventListener("scroll", checkScrollPosition);
