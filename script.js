@@ -123,33 +123,46 @@ window.onscroll = () => {
 //   document.getElementById('svg1').style.display = 'block';
 // });
 
-//-------------------CodeHelp Support Section------------------------------------------
 
 // Function to increase numbers with varying speeds
-function increaseNumber(targetId, targetValue, speed) {
-  const targetElement = document.getElementById(targetId);
-  let currentValue = 0;
-  const increment = Math.ceil(targetValue / (speed * 1000)); // Calculate the increment based on speed (e.g., 1000ms = 1 second)
-  function updateValue() {
-      if (currentValue < targetValue) {
-          currentValue += increment;
-          targetElement.querySelector("span").textContent = currentValue;
-          setTimeout(updateValue, 1);
-      } else {
-          targetElement.querySelector("span").textContent = targetValue;
-      }
-  }
-  updateValue();
-}
-function checkScrollPosition() {
-  if (window.scrollY > 100) {
-      // Call the function with different values and speeds for each element
-      increaseNumber("num1", 900, .5); // Increase to 900 in 1 second
-      increaseNumber("num2", 4, 20);   // Increase to 4 in 5 seconds
-      increaseNumber("num3", 100, 8); // Increase to 100 in 3 seconds
-      increaseNumber("num4", 410, 2); // Increase to 410 in 2 seconds
+const valueDisplays = document.querySelectorAll('#num');
 
-      window.removeEventListener("scroll", checkScrollPosition);
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1,
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      startCounting(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+valueDisplays.forEach(valueDisplay => {
+  observer.observe(valueDisplay);
+});
+
+function startCounting(valueDisplay) {
+  let startValue = 0;
+  let endValue = parseInt(valueDisplay.getAttribute('data-val'));
+  let duration = 2000; // Duration for the count-up animation in milliseconds
+  let startTime;
+
+  function updateNumber(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = timestamp - startTime;
+    const percentage = Math.min(progress / duration, 1);
+    valueDisplay.textContent = Math.floor(percentage * endValue);
+    if (progress < duration) {
+      requestAnimationFrame(updateNumber);
+    } else {
+      valueDisplay.textContent = endValue; // Ensure the final value is accurate
+    }
   }
+
+  requestAnimationFrame(updateNumber);
 }
-window.addEventListener("scroll", checkScrollPosition);
