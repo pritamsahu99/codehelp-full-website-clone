@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="margin-top mt-[85px]"></div>
-            <section class="landingPage dark:bg-[#131516] animate__animated h-[100%] w-[100%] flex flex-col-reverse items-center justify-between md:flex-row py-12 md:py-0">
+            <div class="landingPage dark:bg-[#131516] animate__animated animate__fadeInLeft h-[100%] w-[100%] flex flex-col-reverse items-center justify-between md:flex-row py-12 md:py-0">
                 <div class="heroCont relative mx-auto h-full flex w-11/12 max-w-7xl flex-col-reverse items-center justify-between md:flex-row">
                     <div class="flex relative flex-col gap-y-6 md:w-[400px] lg:min-w-[600px]">
                        <div class="animate__animated animate__fadeInLeft relative flex gap-x-2 md:text-4xl xl:text-6xl text-3xl font-bold">
@@ -70,7 +70,7 @@
                         <span class="animate__animated animate__fadeInLeft dark:text-[#E8E6E3] text-[#4a4f5c] text-xl md:text-2xl xl:text-4xl">
                             The Ultimate Guide To Ace <br> SDE Interviews.
                         </span>
-                        <div class="Buttons2 animate__animated animate__fadeInUp flex items-center gap-x-4">
+                        <div class="Buttons2 animate__animated animate__fadeInLeft flex items-center gap-x-4">
                             <button class="focus:ring-offset-2 focus:ring-[#6674cc] dark:text-[#E7E5E2] dark:bg-[#29347A] focus:ring-2 cursor-pointer text-[#fff] bg-[#6674cc] border border-[#6674cc] rounded-md xl:text-lg text-sm xl:px-9 xl:py-4 px-5 py-2">
                               View Courses
                             </button>
@@ -99,7 +99,7 @@
                         </div>
                         <div class="heroImages xl:flex hidden xl:w-full xl:h-full justify-center items-center">
                             <img loading="lazy" class="gradeient-pic select-none absolute blur-[85px]  left-[0]" src="./images/linear-gradeient-pic.svg">
-                            <img loading="lazy" class="foreground-pic relative object-contain " src="./images/hero-foreground-linear-image.svg" />
+                            <img loading="lazy" class="foreground-pic relative object-contain -bottom-2" src="./images/hero-foreground-linear-image.svg" />
                         </div>
                         <div class="floating-image xl:flex hidden bg-contain absolute ">
                             <div><img loading="lazy" class="imgs1 relative -top-[9rem] left-[13rem]" src="./images/hero-foreground-linear-image-item1.png"></div>
@@ -108,7 +108,7 @@
                         </div>  
                     </div>
                 </div>
-            </section>
+            </div>
             <section id="supportSection" class="font-bold w-screen overflow-x-hidden dark:bg-[#29347A] bg-[#6674cc] dark:text-[#E7E5E2] text-[#ffffff] relative mx-auto grid max-w-maxScreen grid-cols-2 gap-y-16 py-16 items-center px-10 sm:grid-cols-4 md:gap-0">
                 <div class="absolute top-0 left-0 h-10 w-40 rotate-180 sm:block">
                    <span><img loading="lazy" src="https://cdn.thecodehelp.in/llyckc8wjy60b9bg3i8h_5f5a528b6d.svg" ></span>
@@ -477,9 +477,10 @@
                 flex items-center gap-x-3" href="#">🤔 Facing an issue?
             </a>
         </div>
-        <script>
-            //--------------Typewriter Texts Takes Place Here---------------------------------------------------
-var TxtType = function(el, toRotate, period) {
+    <script>
+        
+//--------------Typewriter Texts Takes Place Here---------------------------------------------------
+    var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
@@ -573,6 +574,18 @@ window.addEventListener("load", animateEffects);
 
 //-------------Animations Takes Place Here----------------------------------------------------
 
+// Check if the landingPage element is in view
+const landingPage = document.querySelector('.landingPage');
+const landingPageAnimationClass = 'animate__animated';
+
+function addAnimationClassOnce() {
+  landingPage.classList.add(landingPageAnimationClass);
+  // Remove the event listener after adding the class
+  window.removeEventListener('scroll', addAnimationClassOnce);
+}
+// Add a scroll event listener to add the animation class when the page is scrolled
+window.addEventListener('scroll', addAnimationClassOnce);
+
 const sections = document.querySelectorAll('section');
 let prevScrollY = window.scrollY;
 window.onscroll = () => {
@@ -592,8 +605,8 @@ window.onscroll = () => {
   prevScrollY = currentScrollY; // Update the previous scroll position
 };
 
-//-------------------CodeHelp Support Section------------------------------------------
 
+//-------------------CodeHelp Support Section------------------------------------------
 // Function to increase numbers with varying speeds
 const valueDisplays = document.querySelectorAll('#num');
 
