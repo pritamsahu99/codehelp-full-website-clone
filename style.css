@@ -17,7 +17,6 @@ ul.navLists a:hover{
     color: #6674cc;
     fill: #6674cc;
 }
-
 .typewriter::after{
     content: "|";
     color: #363a45;
@@ -25,6 +24,13 @@ ul.navLists a:hover{
     font-weight: 600;
     margin-left: 1px;
     animation: blink 1s ease infinite;
+
+}
+
+@media (prefers-color-scheme: dark) {
+    .typewriter::after {
+        @apply dark:text-[#E7E5E2];
+    }
 }
 @keyframes blink {
     0% {
@@ -95,4 +101,22 @@ img{
     border-radius: 8px;
     max-width: 100%;
     height: auto;
+}
+  .menu-icon.active #bar1{
+    transition: transform .3s ease; 
+    transform: rotate(45deg) translate(3px, -5px); 
+  }
+  .menu-icon.active #bar2 {
+    display: none;
+  }
+  .menu-icon.active #bar3 {
+    transition: transform .3s ease; 
+    transform: rotate(-45deg) translate(-13px, -3px); 
+  }
+/* .navLists{
+    display: block;
+} */
+.overlayactive {
+    opacity: 1;
+    pointer-events: initial;
 }
